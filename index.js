@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import passport from "passport";
 import { Strategy } from "passport-local";
 import session from "express-session";
-
 import path from 'path';
 import { ObjectId } from "mongodb";
 import { connectToDb, getDb } from './db.js';
@@ -44,14 +43,10 @@ connectToDb((err)=>{
 
 
 
-
-
-
 app.get('/', (req, res) => {
     // Supply necessary data to the EJS template
     res.render('authForm.ejs');
 });
-
 
 
 app.get("/logout", (req, res) => {
